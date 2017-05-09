@@ -10,3 +10,55 @@ Vec2::Vec2(float xx,float yy):
 	y_(yy)
 	{}
 
+
+Vec2& Vec2::operator+=(Vec2 const& v)
+{
+	x_+=v.x_;
+	y_+=v.y_;	
+}
+
+Vec2& Vec2::operator-=(Vec2 const& v)
+{
+	x_-=v.x_;
+	y_-=v.y_;	
+}
+
+Vec2& Vec2::operator*=(float s)
+{
+	x_*=s;
+	y_*=s;
+}
+
+Vec2& Vec2::operator/=(float s)
+{
+	x_/=s;
+	y_/=s;
+}
+
+Vec2 operator+(Vec2 const& u, Vec2 const& v)
+{
+	Vec2 temp{u};
+	temp+=v;
+	return temp;
+}
+
+Vec2 operator-(Vec2 const& u, Vec2 const& v)
+{
+	Vec2 temp{u};
+	temp-=v;
+	return temp;	
+}
+
+Vec2 operator*(Vec2 const& u, float s)
+{
+	Vec2 temp{u};
+	temp*=s;
+	return temp;
+}
+
+Vec2 operator/(Vec2 const& u, float s)
+{
+	Vec2 temp{u};
+	temp/=s;
+	return temp;
+}
