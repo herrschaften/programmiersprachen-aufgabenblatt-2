@@ -3,6 +3,9 @@
 #include <utility>
 #include <cmath>
 
+#include "box.hpp"
+#include "circle.hpp"
+
 
 int main(int argc, char* argv[])
 {
@@ -35,8 +38,11 @@ int main(int argc, char* argv[])
     if (left_pressed) {
       win.draw_line(30, 30, // from
           m.first, m.second, // to
+     
           1.0,0.0,0.0);
     }
+
+
 
     win.draw_line(0, m.second, 10, m.second, 0.0, 0.0, 0.0);
     win.draw_line(win.window_size().second - 10, m.second, win.window_size().second, m.second, 0.0, 0.0, 0.0);
@@ -47,8 +53,23 @@ int main(int argc, char* argv[])
     std::string text = "mouse position: (" + std::to_string(m.first) + ", " + std::to_string(m.second) + ")";
     win.draw_text(10, 5, 35.0f, text);
 
+    //circle
+
+    Circle c1{float {200.0f}, Vec2{400.0f, 400.0f}, Color {1.0f, 0.0f, 0.0f}};
+    c1.draw(win);
+
+    //Box zeichnen
+
+    Box b1{Vec2{300.0f, 430.0f}, Vec2{560.0f, 265.0f}, Color{}};
+    b1.draw(win);
+
+    
+
+    
+
     win.update();
   }
+
 
   return 0;
 }

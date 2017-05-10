@@ -1,20 +1,23 @@
-#ifndef BOX_HPP
-#define BOX_HPP
+#ifndef CIRCLE_HPP
+#define CIRCLE_HPP
 
 #include "vec2.hpp"
+#include "mat2.hpp"
 #include "color.hpp"
 #include "window.hpp"
 
+#include <cmath>
 
-class Box
+
+class Circle
 {
 public:
 
-	Box(Vec2 const& min, Vec2 const& max, Color const& clr);
+	Circle(float const& r, Vec2 const& cntr, Color const& clr);
 
 	//getter
-	Vec2 getmin() const;
-	Vec2 getmax() const;
+	float getradius() const;
+	Vec2 getcntr() const;
 	
 	//memberfunktionen
 	float umfang() const;
@@ -23,8 +26,8 @@ public:
 	void draw(Window const& w, Color const& clr);
 
 private:
-	Vec2 min_;
-	Vec2 max_;	
+	float r_;
+	Vec2 cntr_;	
 	Color clr_;
 	
 };

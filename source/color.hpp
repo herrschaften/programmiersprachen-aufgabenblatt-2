@@ -4,11 +4,12 @@
 
 struct Color
 {
-	float r_, g_, b_;
 
 	Color();
 	Color(float def);
 	Color(float rr, float gg, float bb);
+
+	float r_, g_, b_;
 
 };
 
